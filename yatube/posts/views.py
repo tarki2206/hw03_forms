@@ -1,5 +1,3 @@
-import datetime
-
 from django.shortcuts import render, get_object_or_404, redirect
 from .forms import PostForm
 from .models import Post, Group, User
@@ -93,13 +91,3 @@ def post_edit(request, post_id):
         'is_edit': True
     }
     return render(request, 'posts/create_post.html', context)
-
-
-
-
-
-
-
-
-
-
