@@ -5,12 +5,13 @@
   <h1>{{ group }}</h1>
   <p>{{ group.description }}</p>
   {% for post in page_obj %}
-   <a href="{% url 'posts:post_detail' post.id %}">подробная информация </a>
+
   <ul>
       <li>Автор: {{ post.author.get_full_name }}</li>
       <li>Дата публикации: {{ post.pub_date|date:"d E Y"}}</li>
   </ul>
   <p>{{ post.text }}</p>
+  <a href="{% url 'posts:post_detail' post.id %}">подробная информация </a>
   {% if not forloop.last %}<hr>{% endif %}
   {% endfor %}
   {% endblock %}

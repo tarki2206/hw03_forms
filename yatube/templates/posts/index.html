@@ -5,7 +5,7 @@
     {% block content %}
     <h1>Последние обновления на сайте.</h1>
     {% for post in page_obj %}
-    <a href="{% url 'posts:post_detail' post.id %}">подробная информация </a>
+
     <div>
     <ul>
         <li>Автор: {{ post.author.get_full_name }}</li>
@@ -13,7 +13,8 @@
     </ul>
     <p>{{ post.text }}</p>
     {% if post.group %}
-  <a href="{% url 'posts:group_list' post.group.slug %}">все записи группы</a>
+  <a href="{% url 'posts:group_list' post.group.slug %}">все записи группы</a><br>
+        <a href="{% url 'posts:post_detail' post.id %}">подробная информация </a>
    {% endif %}
   {% if not forloop.last %}<hr>{% endif %}
   </div>
